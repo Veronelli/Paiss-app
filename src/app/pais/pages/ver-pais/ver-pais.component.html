@@ -1,0 +1,34 @@
+<div class="alert alert-info" *ngIf="!pais; else divPais">
+  Espere por favor...
+</div>
+<ng-template #divPais>
+  <div class="row">
+    <div class="col-12">
+      <h1>
+        País: <small>{{ pais.name }}</small>
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <h3>Capital</h3>
+      <h4>{{ pais.capital }}</h4>
+    </div>
+    <div class="col-8">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Region: </strong>{{ pais.region }}
+        </li>
+        <li class="list-group-item">
+          <strong>Alpha3 Codigo: </strong>{{ pais.alpha3Code }}
+        </li>
+        <li class="list-group-item">
+          <strong>Codigo de telefono:</strong>{{ pais.callingCodes }}
+        </li>
+        <li class="list-group-item">
+          <strong>Dominio:</strong>{{ pais.topLevelDomain[0] }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>

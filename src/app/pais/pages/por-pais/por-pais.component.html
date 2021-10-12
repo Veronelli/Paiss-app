@@ -1,0 +1,23 @@
+<div class="animate__animated animate__fadeIn">
+  <h2>Por País</h2>
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <app-pais-input
+        (onEnter)="buscar($event)"
+        [placeholder]="placeholder"
+      ></app-pais-input>
+    </div>
+  </div>
+
+  <div class="alert alert-danger mt-4" *ngIf="error">
+    No se encontró {{ termino }}
+  </div>
+
+  <div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+      <app-pais-table [paises]="paises"></app-pais-table>
+    </div>
+  </div>
+</div>
